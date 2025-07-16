@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    span {
+        background-color: red;
+        color: yellow;
+    }
+</style>
+
+<body>
+    <input id="inputtext" type="text" placeholder="Input text">
+    <button id="btnCheck"> Check </button>
+    <br/>
+    <span id="display"></span>
+
+
+    <script>
+        var inputtext = document.getElementById('inputtext');
+        var btnCheck = document.getElementById('btnCheck');
+        var display = document.getElementById('display');
+
+
+        function CheckC3() {
+            var pattern = /\d/;
+            var value = inputtext.value;
+
+            if (value == '') {
+                display.innerText = 'Null';
+            } else if (pattern.test(value)) {
+                display.innerText = 'Number';
+            } else display.innerText = ' Text';
+
+
+        }
+        btnCheck.onclick = CheckC3;
+    </script>
+</body>
+
+</html>
